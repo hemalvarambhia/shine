@@ -5,3 +5,9 @@ describe '1 + 1' do
     expect(1 + 1).to eq 2
   end
 end
+
+describe '/', type: :routing do
+  it 'routes to the dashboard controller' do
+    expect(get('/')).to route_to 'dashboard#index'
+  end
+end
