@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature 'User session management', type: :feature do
-  before :each do
-    User.create(email: 'test_user@example.com', password: 'secretpassword')
-  end
+  let(:user) { create(:user) }
   
   scenario 'User signs out' do
     visit '/'
-    fill_in 'Email', with: 'test_user@example.com'
-    fill_in 'Password', with: 'secretpassword'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
     click_button 'Log in'
 
     click_link 'Log Out'
