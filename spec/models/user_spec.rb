@@ -17,4 +17,8 @@ describe 'User account' do
       expect(user_with_too_long_password).not_to be_valid
     end
   end
+
+  context 'with an email that is not the company one' do
+    it 'is invalid'
+  end
 end
