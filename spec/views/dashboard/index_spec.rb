@@ -3,7 +3,7 @@ describe 'dashboard/index' do
   include Devise::Test::ControllerHelpers
   
   it 'allows the user to log out' do
-    user = User.create(email: 'test_user@example.com', password: 'secret')
+    user = User.create(email: 'test_user@example.com', password: 'secretpassword')
     sign_in user
     
     render
