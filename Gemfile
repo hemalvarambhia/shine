@@ -45,5 +45,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', require: false
   gem 'guard-rspec'
+  gem 'capybara'
 end
 
