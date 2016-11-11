@@ -45,6 +45,5 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', require: false
   gem 'guard-rspec'
-  gem 'factory_girl_rails'
 end
 
