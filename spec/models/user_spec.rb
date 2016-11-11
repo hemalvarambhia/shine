@@ -19,6 +19,11 @@ describe 'User account' do
   end
 
   context 'with an email that is not the company one' do
-    it 'is invalid'
+    it 'is invalid' do
+      with_non_company_email =
+        build(:user, email: 'user2302@notcompany.com')
+      
+      expect(with_non_company_email).not_to be_valid
+    end
   end
 end
