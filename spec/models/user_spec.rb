@@ -10,6 +10,11 @@ describe 'User account' do
   end
 
   context 'with a password more than 128 characters long' do
-    it 'is invalid'
+    it 'is invalid' do
+      user_with_too_long_password =
+        build(:user, password: 'a' * 129)
+      
+      expect(user_with_too_long_password).not_to be_valid
+    end
   end
 end
