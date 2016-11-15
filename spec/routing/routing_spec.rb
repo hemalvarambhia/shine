@@ -11,3 +11,7 @@ describe '/', type: :routing do
     expect(get('/')).to route_to 'dashboard#index'
   end
 end
+
+describe '/customers', type: :routing do
+  it 'routes to the customer controller index action'
+end
