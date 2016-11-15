@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', require: false
   gem 'guard-rspec'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'capybara'
 end
 
