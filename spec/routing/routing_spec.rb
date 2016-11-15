@@ -13,5 +13,7 @@ describe '/', type: :routing do
 end
 
 describe '/customers', type: :routing do
-  it 'routes to the customer controller index action'
+  it 'routes to the customers controller index action' do
+    expect(get '/customers').to route_to 'customers#index'
+  end
 end
