@@ -26,4 +26,22 @@ describe 'User account' do
       expect(with_non_company_email).not_to be_valid
     end
   end
+
+  describe 'email' do
+    let(:user) do
+      User.create!(
+        email: 'foo@example.com',
+        password: 'qwertyuiop',
+        password_confirmation: 'qwertyuiop'
+      )
+    end
+
+    it 'prevents invalid e-mail addresses' do
+      expect(
+        -> { user.update_attribute(:email, 'foo@bar.com') }
+      ).to raise_error(
+             ActiveRecord::StatementInvalid,
+             /email_must_be_company_email/i)
+    end
+  end
 end
