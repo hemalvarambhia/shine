@@ -3,6 +3,7 @@ RSpec::Matchers.define :violate_check_constraint do |constraint_name|
   match do |code_to_test|
     begin
       code_to_test.call
+      false
     rescue ActiveRecord::StatementInvalid => ex
       ex.message=~/#{constraint_name}/
     end
