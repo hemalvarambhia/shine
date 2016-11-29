@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/violate_check_constraint_matcher'
 
 describe 'User account' do
   context 'with a password less than 10 characters long' do
@@ -39,9 +40,7 @@ describe 'User account' do
     it 'prevents invalid e-mail addresses' do
       expect(
         -> { user.update_attribute(:email, 'foo@bar.com') }
-      ).to raise_error(
-             ActiveRecord::StatementInvalid,
-             /email_must_be_company_email/i)
+      ).to violate_check_constraint :email_must_be_company_email
     end
   end
 end
