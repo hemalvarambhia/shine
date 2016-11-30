@@ -50,5 +50,7 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem 'jasmine'
+  gem 'teaspoon-jasmine'
 end
 
