@@ -49,5 +49,6 @@ group :development, :test do
   gem 'faker'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
