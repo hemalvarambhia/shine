@@ -48,5 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
