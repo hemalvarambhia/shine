@@ -1,5 +1,16 @@
 app = angular.module("customers", [ "ngRoute" ]);
 
+app.config([
+    "$routeProvider",
+    function($routeProvider) {
+	$routeProvider.when(
+	    "/", {
+		controller: "CustomerSearchController",
+		templateURL: "customer_search.html"		
+	    });
+    }
+]);
+
 var CustomerSearchController = function($scope, $http) {
     var page = 0;
     $scope.customers = [];
