@@ -1,4 +1,4 @@
-app = angular.module("customers", [])
+app = angular.module("customers", [ "ngRoute" ]);
 
 var CustomerSearchController = function($scope, $http) {
     var page = 0;
