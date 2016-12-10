@@ -34,6 +34,11 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# AngularJS templates will be compiled so that they are bundled
+# into the application's asset bundle
+gem 'angular-rails-templates'
+gem 'sprockets', '~> 2.0'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %>
   # in views
