@@ -1,4 +1,4 @@
-app = angular.module("customers", [ "ngRoute" ]);
+app = angular.module("customers", [ "ngRoute", "templates" ]);
 
 app.config([
     "$routeProvider",
@@ -6,7 +6,7 @@ app.config([
 	$routeProvider.when(
 	    "/", {
 		controller: "CustomerSearchController",
-		templateURL: "customer_search.html"		
+		templateUrl: "customer_search.html"		
 	    });
     }
 ]);
