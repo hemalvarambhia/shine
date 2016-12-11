@@ -11,7 +11,7 @@ app.config([
     }
 ]);
 
-var CustomerSearchController = function($scope, $http) {
+var CustomerSearchController = function($scope, $http, $location) {
     var page = 0;
     $scope.customers = [];
     $scope.search = function(searchTerm) {
@@ -44,5 +44,5 @@ var CustomerSearchController = function($scope, $http) {
 
 app.controller(
     "CustomerSearchController",
-    [ "$scope", "$http", CustomerSearchController ]
+    [ "$scope", "$http", "$location", CustomerSearchController ]
 );
