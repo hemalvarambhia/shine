@@ -55,7 +55,16 @@ app.controller(
 
 
 var CustomerDetailController = function($scope, $http, $routeParams) {
+    var customerId = $routeParams.id;
+    $scope.customer = {};
 
+    $http.get(
+	"/customers/" + customerId + ".json"
+    ).then(function(response){
+	$scope.customer = response.data;
+    }, function(response) {
+	alert("There was a problem: "+ response.status);
+    });
 };
 
 app.controller(
