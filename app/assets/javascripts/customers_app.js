@@ -46,9 +46,19 @@ var CustomerSearchController = function($scope, $http, $location) {
 	$scope.search($scope.keywords);
     }
     
-}
+};
 
 app.controller(
     "CustomerSearchController",
     [ "$scope", "$http", "$location", CustomerSearchController ]
+);
+
+
+var CustomerDetailController = function($scope, $http, $routeParams) {
+
+};
+
+app.controller(
+    "CustomerDetailController",
+    [ "$scope", "$http", "$routeParams", CustomerDetailController ]
 );
