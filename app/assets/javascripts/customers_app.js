@@ -44,8 +44,11 @@ var CustomerSearchController = function($scope, $http, $location) {
     $scope.nextPage = function() {
 	page = page + 1;
 	$scope.search($scope.keywords);
-    }
-    
+    };
+
+    $scope.viewDetails = function(customer) {
+	$location.path("/" + customer.id);
+    };
 };
 
 app.controller(
