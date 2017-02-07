@@ -57,20 +57,13 @@ app.controller(
 );
 
 
-var CustomerDetailController = function($scope, $http, $routeParams) {
+var CustomerDetailController = function($scope, $routeParams, $resource) {
     var customerId = $routeParams.id;
-    $scope.customer = {};
-
-    $http.get(
-	"/customers/" + customerId + ".json"
-    ).then(function(response){
-	$scope.customer = response.data;
-    }, function(response) {
-	alert("There was a problem: "+ response.status);
-    });
+    var Customer = $resource('/customers/:customerId.json')
+    $scope.customer = Customer.get({ "customerId": customerId});
 };
 
 app.controller(
     "CustomerDetailController",
-    [ "$scope", "$http", "$routeParams", CustomerDetailController ]
+    [ "$scope", "$routeParams", "$resource", CustomerDetailController ]
 );
