@@ -67,3 +67,13 @@ app.controller(
     "CustomerDetailController",
     [ "$scope", "$routeParams", "$resource", CustomerDetailController ]
 );
+
+var CustomerCreditCardController = function($scope, $resource) {
+    var CreditCard = $resource('/fake_billing.json')
+    $scope.creditCard = CreditCard.get({ "cardholder_id": 1234 })
+};
+
+app.controller(
+    "CustomerCreditCardController",
+    [ "$scope", "$resource", CustomerCreditCardController ]
+)
