@@ -1,4 +1,4 @@
-app = angular.module("customers", [ "ngRoute", "templates" ]);
+app = angular.module("customers", [ "ngRoute", "ngResource", "templates" ]);
 
 app.config([
     "$routeProvider",
