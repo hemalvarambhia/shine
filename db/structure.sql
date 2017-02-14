@@ -381,13 +381,6 @@ CREATE UNIQUE INDEX customer_details_customer_id ON customer_details USING btree
 
 
 --
--- Name: customers_billing_addresses_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX customers_billing_addresses_customer_id ON customers_billing_addresses USING btree (customer_id);
-
-
---
 -- Name: customers_lower_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -409,10 +402,10 @@ CREATE INDEX customers_lower_last_name ON customers USING btree (lower((last_nam
 
 
 --
--- Name: customers_shipping_addresses_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_customers_billing_addresses_on_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE INDEX customers_shipping_addresses_customer_id ON customers_shipping_addresses USING btree (customer_id);
+CREATE INDEX index_customers_billing_addresses_on_customer_id ON customers_billing_addresses USING btree (customer_id);
 
 
 --
@@ -427,6 +420,13 @@ CREATE UNIQUE INDEX index_customers_on_email ON customers USING btree (email);
 --
 
 CREATE UNIQUE INDEX index_customers_on_username ON customers USING btree (username);
+
+
+--
+-- Name: index_customers_shipping_addresses_on_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_customers_shipping_addresses_on_customer_id ON customers_shipping_addresses USING btree (customer_id);
 
 
 --
