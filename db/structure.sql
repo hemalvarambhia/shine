@@ -381,6 +381,13 @@ CREATE UNIQUE INDEX customer_details_customer_id ON customer_details USING btree
 
 
 --
+-- Name: customers_billing_addresses_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX customers_billing_addresses_customer_id ON customers_billing_addresses USING btree (customer_id);
+
+
+--
 -- Name: customers_lower_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -399,6 +406,13 @@ CREATE INDEX customers_lower_first_name ON customers USING btree (lower((first_n
 --
 
 CREATE INDEX customers_lower_last_name ON customers USING btree (lower((last_name)::text) varchar_pattern_ops);
+
+
+--
+-- Name: customers_shipping_addresses_customer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX customers_shipping_addresses_customer_id ON customers_shipping_addresses USING btree (customer_id);
 
 
 --
@@ -483,4 +497,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170125135331');
 INSERT INTO schema_migrations (version) VALUES ('20170129220344');
 
 INSERT INTO schema_migrations (version) VALUES ('20170204212200');
+
+INSERT INTO schema_migrations (version) VALUES ('20170214213854');
 
